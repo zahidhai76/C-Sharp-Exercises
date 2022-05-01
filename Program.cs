@@ -12,8 +12,40 @@ namespace Calc
 
         public static void Main()
         {
-            Console.WriteLine(Program.twoConsec());
+            Program.averageInteger();
         }
+
+        //Write a C# Sharp program to check whether the average value of the elements of a given array of numbers is a whole number or not
+        public static void averageInteger()
+        {
+            bool finished = false;
+            while (!finished)
+            {
+                try
+                {
+                    double ctr = 0;
+                    double average;
+                    List<int> numbers = new List<int>();
+                    Console.Write("Enter size of your list: ");
+                    int n = int.Parse(Console.ReadLine());
+                    for (int i = 0; i < n; i++)
+                    {
+                        Console.Write("Enter a number: ");
+                        numbers.Add(int.Parse(Console.ReadLine()));
+                        ctr += numbers[i];
+                    }
+                    average = ctr / n;
+                    Console.WriteLine("The average value, " + average + ((average % 1 == 0) ? ",is a whole number." : ",is not a whole number."));
+                    finished = true;
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
+        }
+
         //Write a C# Sharp program to check if a given string contains two similar consecutive letters
         public static bool twoConsec()
         {
