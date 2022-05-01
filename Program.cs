@@ -12,7 +12,168 @@ namespace Calc
 
         public static void Main()
         {
-            Program.intList();
+            Console.WriteLine(Program.twoConsec());
+        }
+
+        public static bool twoConsec()
+        {
+            bool finished = false;
+            bool result = false;
+            while (!finished)
+            {
+                try
+                {
+
+                    Console.Write("Enter a string: ");
+                    string word = Console.ReadLine();
+                    List<char> characters = new List<char>();
+                    characters.AddRange(word);
+                    for(int i = 1; i < characters.Count; i++)
+                    {
+                        var a = characters[i];
+                        var b = characters[i - 1];
+                        if (a == b)
+                        {
+                            result = true;
+                            break;
+                        }
+                        else
+                        {
+                            result = false;
+                        }
+                    }
+                    finished = true;
+                    return result;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                return result;
+            }
+            return result;
+        }
+
+        public static void coded()
+        {
+            bool finished = false;
+            while (!finished)
+            {
+                try
+                {
+                    Console.Write("Enter a string: ");
+                    string word = Console.ReadLine();
+                    List<char> characters = new List<char>();
+                    characters.AddRange(word);
+                    foreach(char c in characters)
+                    {
+                        if (c == 'P')
+                        {
+                            Console.Write("9 ");
+                        }
+                        else if (c == 'T')
+                            {
+                            Console.Write("0 ");
+                        }
+                        else if (c == 'S')
+                        {
+                            Console.Write("1 ");
+                        }
+                        else if (c == 'H')
+                        {
+                            Console.Write("6 ");
+                        }
+                        else if (c == 'A')
+                        {
+                            Console.Write("8 ");
+                        }
+                        else
+                        {
+                            Console.Write(c + " ");
+                        }
+                        finished = true;
+                    }
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
+        }
+        public static void sortNo5()
+        {
+            bool finished = false;
+            while (!finished)
+            {
+                try
+                {
+                    int ctr = 0;
+                    List<int> numbers = new List<int>();
+                    Console.Write("Enter size of your list: ");
+                    int n = int.Parse(Console.ReadLine());
+                    for(int i = 0; i < n; i++)
+                    {
+                        Console.Write("Enter a number: ");
+                        numbers.Add(int.Parse(Console.ReadLine()));
+                    }
+                    List<int> ordered = numbers.Where(number => number != -5).OrderBy(number => number).ToList(); //Method
+                    //List<int> ordered = (from number in numbers where number != -5 orderby number select number).ToList(); //Query
+                    List<int> ordered2 = numbers.Select(number => number != -5 ? ordered[ctr++] : -5).ToList();
+                    //List<int> ordered2 = from number in numbers select number
+                    foreach (int number in ordered2)
+                    {
+                            Console.Write(number + " ");
+                    }
+                    finished = true;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
+        }
+
+
+        public static void matrix()
+        {
+            bool finished = false;
+            while (!finished)
+            {
+                try
+                {
+                    Console.WriteLine("Enter the dimensions of your matrix a x b : ");
+                    Console.Write("a: ");
+                    int a = int.Parse(Console.ReadLine());
+                    Console.Write("b: ");
+                    int b = int.Parse(Console.ReadLine());
+                    int[,] numbers = new int[a, b];
+
+                    for(int i = 0; i < a; i++)
+                    {
+                        for(int j = 0; j < b ; j++)
+                        {
+                            Console.Write("Enter matrix element for " + i + " x " + j + " : ");
+                            int x = int.Parse(Console.ReadLine());
+                            numbers[i, j] = x;
+
+                        }
+                    }
+                    for(int i = 0; i < a; i++)
+                    {
+                        for(int j = 0; j < b; j++)
+                        {
+                            Console.Write("{0} ", numbers[i, j]);
+                        }
+                        Console.Write(Environment.NewLine + Environment.NewLine);
+                    }
+                    finished = true;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
         }
 
         public static void intList()
