@@ -14,7 +14,7 @@ namespace Calc
         {
             Console.WriteLine(Program.twoConsec());
         }
-
+        //Write a C# Sharp program to check if a given string contains two similar consecutive letters
         public static bool twoConsec()
         {
             bool finished = false;
@@ -53,7 +53,7 @@ namespace Calc
             }
             return result;
         }
-
+        //Write a C# Sharp program to create a coded string from a given string, using specified formula
         public static void coded()
         {
             bool finished = false;
@@ -101,6 +101,7 @@ namespace Calc
                 }
             }
         }
+        //Write a C# program to sort the integers in ascending order without moving the number -5
         public static void sortNo5()
         {
             bool finished = false;
@@ -175,7 +176,7 @@ namespace Calc
                 }
             }
         }
-
+        //Write a C# program which will accept a list of integers and checks how many integers are needed to complete the range
         public static void intList()
         {
             bool finished = false;
@@ -215,7 +216,7 @@ namespace Calc
                 }
             }
         }
-
+        //Write a C# program to find the pair of adjacent elements that has the highest product of an given array of integers
         public static void Product()
         {
             bool finished = false;
@@ -255,6 +256,7 @@ namespace Calc
                 }
             }
         }
+        //Write a C# program to create a new array of length containing the middle elements of three arrays (each length 3) of integers
         public static void newArray()
         {
             bool finished = false;
@@ -290,7 +292,7 @@ namespace Calc
                 }
             }
         }
-
+        //Write a C# program to compute the sum of all the elements of an array of integers
         public static void sumArray()
         {
             bool finished = false;
@@ -316,7 +318,7 @@ namespace Calc
                 }
             }
         }
-
+        //Write a C# program to create a new string of every other character (odd position) from the first position of a given string
         public static void oddString()
         {
             bool finished = false;
@@ -345,6 +347,7 @@ namespace Calc
                 }
             }
         }
+        //Write a C# program to check if a given string contains ‘w’ character between 1 and 3 times
         public static void charTest()
         {
             bool finished = false;
@@ -376,8 +379,7 @@ namespace Calc
                 }
             }
         }
-
-
+        //Write a C# program to find the largest and lowest values from three integer values
         public static void MinMaxTest()
         {
             bool finished = false;
@@ -406,7 +408,7 @@ namespace Calc
                 }
             }
         }
-
+        //Write a C# program to check if a string starts with a specified word
         public static void firstWord()
         {
             bool finished = false;
@@ -439,6 +441,7 @@ namespace Calc
                 }
             }    
         }
+        //Write a C# program to check if a given positive number is a multiple of 3 or a multiple of 7
         public static void multiple()
         {
             bool finished = false;
@@ -463,6 +466,7 @@ namespace Calc
             }
             Console.WriteLine("Well done!");
         }
+        //Write a C# program to create a new string of four copies, taking last four characters from a given string. If the length of the given string is less than 4 return the original one
         public static void fourCopy()
         {
             Console.Write("Enter a sentence: ");
@@ -479,6 +483,7 @@ namespace Calc
             }
 
         }
+        //Write a C# program to multiply corresponding elements of two arrays of integers
         public static void multiplyArray()
         {
             int[] Array1 = { 1, 3, -5, 4 };
@@ -497,9 +502,7 @@ namespace Calc
                 Console.Write(Array1[i] * Array2[i] + " ");
             }
         }
-
-
-
+        //Write a C# program to reverse the words of a sentence
         public static void Reverse()
         {
             string sentence;
@@ -525,9 +528,7 @@ namespace Calc
             }
 
         }
-
-
-
+        //Write a C# program and compute the sum of the digits of an integer
         public static int Digits(int number)
         {
             int digits = 0;
@@ -554,6 +555,7 @@ namespace Calc
             }
             return true;
         }
+        //Write a C# Sharp program that takes four numbers as input to calculate and print the average
         public static void mean()
         {
             double x, y, z, sum = 0;
@@ -572,7 +574,7 @@ namespace Calc
             x = Math.Round((sum / y), 2);
             Console.WriteLine("Average is : " + x);
         }
-
+        //Write a C# program to create a new string from a given string (length 1 or more ) with the first character added at the front and back
         public static void flip()
         {
             string word, a, b, z;
@@ -583,7 +585,7 @@ namespace Calc
             b = word.Substring(1, word.Length - 2);
             Console.WriteLine(z + b + a);
         }
-
+        //Write a C# program to check two given integers and return true if one is negative and one is positive
         public static void check()
         {
             int x, y;
@@ -605,7 +607,7 @@ namespace Calc
                 Console.WriteLine("The signs of your numbers match or at least one of your numbers is 0");
             }
         }
-
+        //Write a C# program to compute the sum of two given integers, if two values are equal then return the triple of their sum
         public static void comp()
         {
             try
@@ -634,7 +636,7 @@ namespace Calc
 
 
         }
-
+        //Write a C# program to get the absolute value of the difference between two given numbers. Return double the absolute value of the difference if the first number is greater than second number
         public static int abs(int a, int b)
         {
             int c;
@@ -648,7 +650,7 @@ namespace Calc
             }
             return c;
         }
-
+        //Write a C# program to find the longest word in a string
         public static void longest(string line)
         {
                 string[] words = line.Split(new[] { " " }, StringSplitOptions.None);
@@ -665,11 +667,11 @@ namespace Calc
 
                 Console.WriteLine(word);
         }
-
+        //Write a C# program to print the odd numbers from 1 to 99
         public static void Odd()
         {
             Console.WriteLine("Odd numbers from 1 to 99. Prints one number per line.");
-            for (int n = 1; n < (99 + 1); n++)
+            for (int n = 1; n < 100; n++)
             {
                 if (n % 2 != 0)
                 {
