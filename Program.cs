@@ -12,7 +12,50 @@ namespace Calc
 
         public static void Main()
         {
-            Program.averageInteger();
+            Program.cumulative();
+        }
+
+        //Write a C# Sharp program to find the cumulative sum of an array of number. Go to the editor
+        //A cumulative sum is a sequence of partial sums of a given sequence.For example, the cumulative sums of the sequence {x, y, z,...}, are x, x+y , x+y+z
+
+        public static void cumulative()
+        {
+            bool finished = false;
+            while (!finished)
+            {
+                try
+                {
+                    List<int> numbers = new List<int>();
+                    List<int> sum_numbers = new List<int>();
+                    Console.Write("Enter size of your list: ");
+                    int n = int.Parse(Console.ReadLine());
+                    for (int i = 0; i < n; i++)
+                    {
+                        Console.Write("Enter a number: ");
+                        numbers.Add(int.Parse(Console.ReadLine()));
+                    }
+                    for (int i = 0; i < n; i++)
+                    {
+                        if (i > 0)
+                        {
+                            sum_numbers.Add(numbers[i] + sum_numbers[i - 1]);
+                        }
+                        else
+                        {
+                            sum_numbers.Add(numbers[0]);
+                        }
+                    }
+                    foreach(int number in sum_numbers)
+                    {
+                        Console.Write(number + " ");
+                    }
+                    finished = true;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
         }
 
         //Write a C# Sharp program to check whether the average value of the elements of a given array of numbers is a whole number or not
