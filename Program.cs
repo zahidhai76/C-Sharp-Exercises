@@ -12,12 +12,44 @@ namespace Calc
 
         public static void Main()
         {
-            Program.cumulative();
+            Program.PositiveNegative();
         }
 
+        //Write a C# Sharp program to count positive and negative numbers in a given array of integers
+        public static void PositiveNegative()
+        {
+            bool finished = false;
+            while (!finished)
+            {
+                try
+                {
+                    List<int> numbers = new List<int>();
+                    Console.Write("Enter size of your list: ");
+                    int n = int.Parse(Console.ReadLine());
+                    for (int i = 0; i < n; i++)
+                    {
+                        Console.Write("Enter a number: ");
+                        numbers.Add(int.Parse(Console.ReadLine()));
+                    }
+                    List<int> pos = numbers.Where(number => number > 0).ToList();
+                    List<int> neg = numbers.Where(number => number < 0).ToList();
+                    Console.WriteLine("Number of positive numbers is: " + pos.Count() + "\nNumber of negative numbers is: " + neg.Count());
+                    finished = true;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
+        }
+
+        //Write a C# Sharp program to reverse a boolean value
+        public static bool reverse(bool boolean)
+        {
+            return !boolean;
+        }
         //Write a C# Sharp program to find the cumulative sum of an array of number. Go to the editor
         //A cumulative sum is a sequence of partial sums of a given sequence.For example, the cumulative sums of the sequence {x, y, z,...}, are x, x+y , x+y+z
-
         public static void cumulative()
         {
             bool finished = false;
