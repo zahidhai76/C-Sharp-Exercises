@@ -22,8 +22,14 @@ namespace Calc
             {
                 try
                 {
+                    int ctr = 0;
                     Console.Write("Enter the size of your list: ");
                     int n = int.Parse(Console.ReadLine());
+                    while (n <= 0)
+                    {
+                        Console.WriteLine("Please enter a positive integer: ");
+                        n = int.Parse(Console.ReadLine());
+                    }
                     List<int> numbers = new List<int>();
                     for(int i = 0; i < n; i++)
                     {
@@ -34,7 +40,13 @@ namespace Calc
                     Console.WriteLine("Your list ordered is: ");
                     foreach (int number in ordered)
                         Console.Write(number + " ");
+                    for(int j = 0; j < n - 1; j++)
+                    {
+                        ctr += ordered[j + 1] - ordered[j] - 1;
+                    }
+                    Console.WriteLine("\nYou're missing " + ctr + " integer(s) for your consecutive list to be complete.");
                     finished = true;
+
                 }
                 catch (Exception e)
                 {
