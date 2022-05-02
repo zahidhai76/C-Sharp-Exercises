@@ -12,8 +12,20 @@ namespace Calc
 
         public static void Main()
         {
-            Program.PositiveNegative();
+
         }
+
+        //Write a C# Sharp program to remove the character in a given position of a given string
+       /* public static void Main()
+        {
+            Remove word = new Remove();
+            Console.Write("Enter a character position to remove: ");
+            word.N = int.Parse(Console.ReadLine());
+            Console.Write("Enter a word: ");
+            word.Word = Console.ReadLine();
+            word.removal(word.Word, word.N);
+        }
+       */
 
         //Write a C# Sharp program to count positive and negative numbers in a given array of integers
         public static void PositiveNegative()
@@ -791,3 +803,4 @@ namespace Calc
     }
 
 }
+
