@@ -12,20 +12,139 @@ namespace Calc
 
         public static void Main()
         {
+            Program.last3();
+        }
+
+        //Write a C# Sharp program to convert the last 3 characters of a given string in upper case. If the length of the string has less than 3 then uppercase all the characters
+        public static void last3()
+        {
+            bool finished = false;
+            while (!finished)
+            {
+                try
+                {
+                    Console.Write("Enter a word: ");
+                    string word = Console.ReadLine();
+                    if(word.Length < 3)
+                    {
+                        word = word.ToUpper();
+                    }
+                    else
+                    {
+                        word = word.Substring(0, word.Length - 3) + word.Substring(word.Length -3, 3).ToUpper();
+                    }
+                    Console.WriteLine(word);
+                    finished = true;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
+        }
+
+        //Write a C# Sharp program to check if a given string contains between 2 and 4 'z' character
+        public static bool test(string str)
+        {
+            int i = 0;
+            char[] myLettersArray = str.ToCharArray();
+            foreach (char letter in myLettersArray)
+            {
+                if (Char.ToUpper(letter) == 'Z')
+                {
+                    i++;
+                }
+            }
+            if (i >= 2 && i <= 4)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //Write a C# Sharp program to check the largest number among three given integers (same as earlier exercises but using list instead of array this time)
+        public static void Largest()
+        {
+            bool finished = false;
+            while (!finished)
+            {
+                try
+                {
+                    int biggest = int.MinValue;
+                    List<int> numbers = new List<int>();
+                    Console.Write("Enter size of your list: ");
+                    int n = int.Parse(Console.ReadLine());
+                    while (n <= 0)
+                    {
+                        Console.Write("Please enter a positive integer: ");
+                        n = int.Parse(Console.ReadLine());
+                    }
+                    for (int i = 0; i < n; i++)
+                    {
+                        Console.Write("Enter a number: ");
+                        numbers.Add(int.Parse(Console.ReadLine()));
+                        if(numbers[i] > biggest)
+                        {
+                            biggest = numbers[i];
+                        }
+                    }
+                    Console.WriteLine("The largest number in your list is " + biggest);
+                    finished = true;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
 
         }
+
+        //Write a C# Sharp program to exchange the first and last characters in a given string and return the new string.
+        /*
+          public static void Main()
+          {
+              bool finished = false;
+              while (!finished)
+              {
+                  try
+                  {
+                      Swap word = new Swap();
+                      Console.Write("Enter a word: ");
+                      word.Word = Console.ReadLine();
+                      word.CharacterSwap(word.Word);
+                      finished = true;
+                  }
+                  catch (Exception e)
+                  {
+                      Console.WriteLine(e.Message);
+                  }
+              }
+          }
+        */
 
         //Write a C# Sharp program to remove the character in a given position of a given string
-       /* public static void Main()
-        {
-            Remove word = new Remove();
-            Console.Write("Enter a character position to remove: ");
-            word.N = int.Parse(Console.ReadLine());
-            Console.Write("Enter a word: ");
-            word.Word = Console.ReadLine();
-            word.removal(word.Word, word.N);
-        }
-       */
+        /* public static void Main()
+         {
+                  bool finished = false;
+            while (!finished)
+            {
+                try
+                {
+                    Remove word = new Remove();
+                    Console.Write("Enter a character position to remove: ");
+                    word.N = int.Parse(Console.ReadLine());
+                    Console.Write("Enter a word: ");
+                    word.Word = Console.ReadLine();
+                    word.removal(word.Word, word.N);
+                    finished = true;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }    
+         }
+        */
 
         //Write a C# Sharp program to count positive and negative numbers in a given array of integers
         public static void PositiveNegative()
