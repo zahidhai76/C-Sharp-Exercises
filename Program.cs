@@ -12,7 +12,76 @@ namespace Calc
 
         public static void Main()
         {
-            Program.last3();
+            bool finished = false;
+            while (!finished)
+            {
+                try
+                {
+                    wordInt words = new wordInt();
+                    Console.Write("Enter a word: ");
+                    words.Word = Console.ReadLine();
+                    Console.Write("Enter number of copies: ");
+                    words.N = int.Parse(Console.ReadLine());
+                    words.copies();
+                    finished = true;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
+
+        }
+
+
+        //Write a C# Sharp program to create a new string which is n (non-negative integer) copies of a given string (class version)
+        /*public static void Main()
+        {
+            bool finished = false;
+            while (!finished)
+            {
+                try
+                {
+                    wordInt words = new wordInt();
+                    Console.Write("Enter a word: ");
+                    words.Word = Console.ReadLine();
+                    Console.Write("Enter number of copies: ");
+                    words.N = int.Parse(Console.ReadLine());
+                    words.copies();
+                    finished = true;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
+
+        }*/
+
+        //Write a C# Sharp program to create a new string which is n (non-negative integer) copies of a given string
+
+        public static string copy(string word, uint n) //uint for only positive
+        {
+            bool finished = false;
+            string result = "";
+            while (!finished)
+            {
+                try
+                {
+                    for(int i = 0; i < n; i++)
+                    {
+                        result += word;
+                    }
+                    finished = true;
+                    return result;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                return result;
+            }
+            return result;
         }
 
         //Write a C# Sharp program to convert the last 3 characters of a given string in upper case. If the length of the string has less than 3 then uppercase all the characters

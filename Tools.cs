@@ -43,3 +43,39 @@ public class Swap
     }
 }
 
+public class wordInt
+{
+    private string word;
+    private int n;
+
+    public string Word
+    {
+        get { return word; }
+        set { word = value; }
+    }
+
+    public int N
+    {
+        get { return n; }
+        set { if (value > 0)
+            {
+                n = value;
+            }
+            else
+            {
+                n = 0;
+            }
+        }
+    }
+
+    public void copies()
+    {
+        string result = "";
+        for (int i = 0; i < n; i++)
+        {
+            result += word;
+        }
+        Console.WriteLine(result);
+    }
+
+}
