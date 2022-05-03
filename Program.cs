@@ -12,17 +12,95 @@ namespace Calc
 
         public static void Main()
         {
+            Console.WriteLine(Program.FizzBuzz());
+        }
+
+        //Write a C# Sharp program to check whether a given string starts with "F" or ends with "B".
+        //If the string starts with "F" return "Fizz" and return "Buzz" if it ends with "B" If the string starts with "F" and ends with "B" return "FizzBuzz".
+        //In other cases return the original string
+        public static string FizzBuzz()
+        {
+            bool finished = false;
+            string result = "";
+            while (!finished)
+            {
+                try
+                {
+                    Console.Write("Enter a string: ");
+                    string word = Console.ReadLine();
+                    if (word[0] == 'F' || word[0] == 'f')
+                    {
+                        if (word[word.Length-1] == 'B' || word[word.Length - 1] == 'b')
+                        {
+                            result = "FizzBuzz";
+                        }
+                        else
+                            result = "Fizz";
+                    }
+                    else if (word[word.Length-1] == 'B' || word[word.Length - 1] == 'b')
+                    {
+                        result = "Buzz";
+                    }
+                    else
+                        result = word;
+                    finished = true;
+                    return result;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                return result;
+            }
+            return result;
+        }
+
+
+        //Write a C# Sharp program to check whether the sequence of numbers 1, 2, 3 appears in a given array of integers somewhere
+        public static bool Sequence123()
+        {
+            bool finished = false;
+            bool result = false;
+            while (!finished)
+            {
+                try
+                {
+                    int[] numbers = { 1, 1, 2, 3, 1 };
+                    for(int i = 0; i < numbers.Length-2; i++)
+                    {
+                        if(numbers[i] == 1 && numbers[i+1] == 2 && numbers[i+2] == 3)
+                        {
+                            result = true;
+                        }
+                    }
+                    finished = true;
+                    return result;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                return result;
+            }
+            return result;
+        }
+
+        //Write a C# Sharp program to create a string like "aababcabcd" from a given string "abcd".
+        public static void StringPattern()
+        {
             bool finished = false;
             while (!finished)
             {
                 try
                 {
-                    wordInt words = new wordInt();
-                    Console.Write("Enter a word: ");
-                    words.Word = Console.ReadLine();
-                    Console.Write("Enter number of copies: ");
-                    words.N = int.Parse(Console.ReadLine());
-                    words.copies();
+                    var result = "";
+                    Console.Write("Enter a string: ");
+                    string word = Console.ReadLine();
+                    for(int i = 0; i < word.Length; i++)
+                    {
+                        result += word.Substring(0, i + 1);
+                    }
+                    Console.WriteLine(result);
                     finished = true;
                 }
                 catch (Exception e)
@@ -30,9 +108,7 @@ namespace Calc
                     Console.WriteLine(e.Message);
                 }
             }
-
         }
-
 
         //Write a C# Sharp program to create a new string which is n (non-negative integer) copies of a given string (class version)
         /*public static void Main()
