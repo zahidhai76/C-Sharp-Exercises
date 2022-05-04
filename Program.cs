@@ -12,7 +12,41 @@ namespace Calc
 
         public static void Main()
         {
-            Console.WriteLine(Program.FizzBuzz());
+            Program.CombineStrings();
+        }
+
+        //Write a C# Sharp program to combine two given strings. If the given strings have different length remove the characters from the longer string
+        public static void CombineStrings()
+        {
+            bool finished = false;
+            while (!finished)
+            {
+                try
+                {
+                    string combined;
+                    Console.Write("Enter your first word: ");
+                    string word1 = Console.ReadLine();
+                    Console.Write("Enter your second word: ");
+                    string word2 = Console.ReadLine();
+                    if (word1.Length > word2.Length)
+                    {
+                        combined = word1.Substring(0, word2.Length) + word2;
+                    }
+                    else if (word2.Length > word1.Length)
+                    {
+                        combined = word2.Substring(0, word1.Length) + word1;
+                    }
+                    else
+                    {
+                        combined = word1 + word2;
+                    }
+                    Console.WriteLine(combined);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
         }
 
         //Write a C# Sharp program to check whether a given string starts with "F" or ends with "B".
