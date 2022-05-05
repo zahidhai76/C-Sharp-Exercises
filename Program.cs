@@ -12,7 +12,126 @@ namespace Calc
 
         public static void Main()
         {
-            Program.CombineStrings();
+            Program.NumberTriangle();
+        }
+
+        //Write a C# Sharp program that takes a number and a width also a number, as input and then displays a triangle of that width, using that number
+        public static void NumberTriangle()
+        {
+            int n, width;
+            Console.Write("Enter a number: ");
+            n = int.Parse(Console.ReadLine());
+            Console.Write("Enter the desired width: ");
+            width = int.Parse(Console.ReadLine());
+            while (width <= 0)
+            {
+                Console.Write("Enter a positive integer: ");
+                width = int.Parse(Console.ReadLine());
+            }
+            int height = width;
+            for(int i = 0; i < height; i++)
+            {
+                for(int j = 0; j < width; j++)
+                {
+                    Console.Write(n);
+                }
+                Console.WriteLine();
+                width--;
+            }
+ 
+        }
+
+        //Write a C# Sharp program to check a given array of integers and return true if the given array contains either 2 even or 2 odd values all next to each other
+        public static bool OddEven(int[] numbers)
+        {
+            int even = 0;
+            int odd = 0;
+            for(int i = 0; i < numbers.Length; i++)
+            {
+                if (even < 2 && odd < 2)
+                {
+                    if (numbers[i] % 2 == 0)
+                    {
+                        even++;
+                        odd = 0;
+                    }
+                    else
+                    {
+                        odd++;
+                        even = 0;
+                    }
+                }
+            }
+            return odd == 2 || even == 2;
+        }
+
+
+        //Write a C# Sharp program to create a new array of integers and length 1 or more.
+        //The length of the new array will be double length of the given array and all the elements are 1 except the first element which is equal to the given array
+        public static void DoubleLength()
+        {
+            bool finished = false;
+            while (!finished)
+            {
+                try
+                {
+                    Console.Write("Enter size of your array: ");
+                    int n = Convert.ToInt32(Console.ReadLine());
+                    while (n <= 0)
+                    {
+                        Console.Write("Enter a positive integer: ");
+                        n = Convert.ToInt32(Console.ReadLine());
+                    }
+                    double[] numbers = new double[n];
+                    double[] numbers2 = new double[2 * n];
+                    for (int i = 0; i < numbers.Length; i++)
+                    {
+                        Console.Write("Enter a number: ");
+                        numbers[i] = Convert.ToDouble(Console.ReadLine());
+                    }
+                    numbers2[0] = numbers[0];
+                    for(int i = 1; i < numbers2.Length; i++)
+                    {
+                        numbers2[i] = 0;
+                    }
+                    foreach(double number in numbers2)
+                    {
+                        Console.Write(number.ToString() + " ");
+                    }
+                    finished = true;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
+        }
+
+        //Write a C# Sharp program to create a new array taking  the first and last elements of a given array of integers and length 1 or more
+        public static void FirstLastElement(List<int> numbers)
+        {
+            bool finished = false;
+            while (!finished)
+            {
+                try
+                {
+                    int x = numbers[0];
+                    int y = numbers[numbers.Count() - 1];
+                    List<int> NewNumbers = new List<int>
+                    {
+                        x, y
+                    };
+                    foreach(int number in NewNumbers)
+                    {
+                        Console.Write(number + " ");
+                    }
+                    finished = true;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
         }
 
         //Write a C# Sharp program to combine two given strings. If the given strings have different length remove the characters from the longer string
