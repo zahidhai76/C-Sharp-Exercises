@@ -12,7 +12,48 @@ namespace Calc
 
         public static void Main()
         {
-            Program.NumberTriangle();
+            Program.UserPassword();
+        }
+
+        //Write a C# Sharp program that takes userid and password as input (type string). After 3 wrong attempts, user will be rejected
+        public static string UserPassword()
+        {
+            bool finished = false;
+            string result = "Failure.";
+            while (!finished)
+            {
+                try
+                {
+                    int ctr = 0;
+                    string username, password;
+                    do
+                    {
+                        Console.Write("Input a username: ");
+                        username = Console.ReadLine();
+                        Console.Write("Enter your password: ");
+                        password = Console.ReadLine();
+
+                        if (username == "dba" && password == "JELLY")
+                        {
+                            result = "Success!";
+                            ctr = 3;
+                        }
+                        else
+                        {
+                            ctr++;
+                        }
+                    }
+                    while ((username != "dba" || password != "JELLY") && ctr != 3);
+                    Console.WriteLine(result);
+                    finished = true;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                return result;
+            }
+            return result;
         }
 
         //Write a C# Sharp program that takes a number and a width also a number, as input and then displays a triangle of that width, using that number
